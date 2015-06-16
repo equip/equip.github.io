@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Spark by sparkphp</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Spark</h1>
+        <p class="header"></p>
+
+
+
+        <ul>
+          <li><a class="buttons github" href="https://github.com/sparkphp">GitHub Profile</a></li>
+        </ul>
+
+      </header>
+      <section>
+        <h1>
+<a id="spark" class="anchor" href="#spark" aria-hidden="true"><span class="octicon octicon-link"></span></a>Spark</h1>
+
+<p>Spark is a PSR-7 compliant <a href="https://github.com/pmjones/adr">Action-Domain-Responder</a>
+(ADR) system. While it may look like a micro-framework (and it is), it is more like a
+wrapper around the real logic of your application domain. It's also <a href="http://www.php-fig.org/psr/psr-1/">PSR-1</a>,
+<a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a>, and <a href="http://www.php-fig.org/psr/psr-4/">PSR-4</a> compliant.</p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>You will need <a href="https://getcomposer.org">Composer</a> to install Spark.</p>
+
+<p>Pick a project name, and use Composer to create it with Spark. Let's create
+one called <code>spark-project</code>:</p>
+
+<div class="highlight highlight-bash"><pre>composer create-project -s dev sparkphp/project spark-project</pre></div>
+
+<p>Confirm the installation by changing into the project directory and starting the
+built-in PHP web server:</p>
+
+<div class="highlight highlight-bash"><pre><span class="pl-c1">cd</span> spark-project
+php -S localhost:8000 -t web/</pre></div>
+
+<p>You can then browse to <a href="http://localhost:8000/shifts">http://localhost:8000/shifts</a> and see JSON output:</p>
+
+<div class="highlight highlight-json"><pre>{<span class="pl-s"><span class="pl-pds">"</span>shifts<span class="pl-pds">"</span></span>: []}</pre></div>
+
+<p>You can also browse to <a href="http://localhost:8000/shifts?user_id=1">http://localhost:8000/shifts?user_id=1</a> and see modified JSON output:</p>
+
+<div class="highlight highlight-json"><pre>{<span class="pl-s"><span class="pl-pds">"</span>meta<span class="pl-pds">"</span></span>: {}, <span class="pl-s"><span class="pl-pds">"</span>shifts<span class="pl-pds">"</span></span>: []}</pre></div>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<h3>
+<a id="custom-injector" class="anchor" href="#custom-injector" aria-hidden="true"><span class="octicon octicon-link"></span></a>Custom Injector</h3>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-smi">$injector</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">\Auryn\</span><span class="pl-c1">Injector</span>;</span>
+<span class="pl-s1"><span class="pl-smi">$injector</span><span class="pl-k">-&gt;</span>share(<span class="pl-s"><span class="pl-pds">'</span>Extra\Dependency<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$app</span> <span class="pl-k">=</span> <span class="pl-c1">Spark\</span><span class="pl-c1">Application</span><span class="pl-k">::</span>boot(<span class="pl-smi">$injector</span>);</span></pre></div>
+
+<h2>
+<a id="source-code" class="anchor" href="#source-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Source Code</h2>
+
+<p>Check out the source project <a href="http://github.com/sparkphp/Spark">here</a>.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
